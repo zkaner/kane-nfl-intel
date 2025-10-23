@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; text-align: center; }
+        h1 { margin-bottom: 1rem; }
+        p { font-size: 1.2rem; margin: 0.5rem 0; }
+        a { display: inline-block; margin-top: 1.5rem; color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
     <h1>Prediction Result</h1>
-    <p>Matchup: {{ team_a }} vs {{ team_b }}</p>
+    <p><strong>Matchup:</strong> {{ team_a }} vs {{ team_b }}</p>
     <p><strong>Predicted winner:</strong> {{ winner }}</p>
     <p><strong>Win probability:</strong> {{ probability }}</p>
     <a href="/">Predict another matchup</a>
