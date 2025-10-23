@@ -2,18 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kane NFL Intel - Predict Game</title>
+    <title>Kane NFL Intel – Game Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; }
+        h1 { text-align: center; }
+        form { display: flex; flex-direction: column; gap: 1rem; }
+        label { font-weight: bold; }
+        select, button { padding: 0.5rem; font-size: 1rem; }
+        button { cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+    </style>
 </head>
 <body>
-    <h1>Kane NFL Intel Prediction</h1>
+    <h1>Kane NFL Intel – Game Prediction</h1>
     <form action="/predict" method="post">
         <label for="teamA">Team A:</label>
-        <input type="text" id="teamA" name="teamA" required>
-        <br><br>
+        <select name="teamA" id="teamA">
+            {% for team in teams %}
+            <option value="{{ team }}">{{ team }}</option>
+            {% endfor %}
+        </select>
         <label for="teamB">Team B:</label>
-        <input type="text" id="teamB" name="teamB" required>
-        <br><br>
-        <button type="submit">Predict</button>
+        <select name="teamB" id="teamB">
+            {% for team in teams %}
+            <option value="{{ team }}">{{ team }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Predict Winner</button>
     </form>
 </body>
 </html>
